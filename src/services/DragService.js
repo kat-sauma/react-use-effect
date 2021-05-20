@@ -1,8 +1,8 @@
 export const fetchQueens = async () => {
   const res = await fetch('http://www.nokeynoshade.party/api/queens/all');
-  const { queens } = await res.json();
+  const json = await res.json();
 
-  return queens.map((queen) => ({
+  return json.map((queen) => ({
     id: queen.id,
     name: queen.name,
     winner: queen.winner,
