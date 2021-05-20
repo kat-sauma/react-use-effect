@@ -10,6 +10,7 @@ export default class DragContainer extends Component {
     };
 
     async componentDidMount() {
+
       const queens = await fetchQueens();
 
       this.setState({
@@ -21,14 +22,13 @@ export default class DragContainer extends Component {
       const { loading, queens } = this.state;
      
       if(loading) return (
-        <aside role="img" aria-label="loading">
+        <section role="img" aria-label="loading">
           <img role="spinner"
             aria-label="loading spinner" 
-            src="https://giphy.com/gifs/loop-happiness-loading-MTKsRM3QzNeOI59SbO"
-          />;  
-        </aside>
-      ); 
-
-      return <DragList queens = { queens } />;
+            src="loadingedit3.gif"
+          />
+        </section>
+      );
+      else return <DragList queens = { queens } />;
     }
 }

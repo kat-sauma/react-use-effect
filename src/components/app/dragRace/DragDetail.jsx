@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -8,29 +9,30 @@ function DragDetail({
   winner, 
   MissCongeniality, 
   quote,
-  season,
-  lipsyncSong,
-  lipsyncArtist 
+  season
 }) {
   return (
     
-    <Link to={'/'}>
-      <li role="listitem" className="queen-detail" aria-label="queen info">
+    <section role="listitem" className="queen-detail" aria-label="queen info">
+      <Link to="/">
         <img src={image} alt={name} />
         <p>{name}</p>
         <p>{quote}</p>
         <p>{winner}</p>
         <p>{season}</p>
-        <p>{lipsyncSong}</p>
-        <p>{lipsyncArtist}</p>
         <p>{MissCongeniality}</p>
-      </li>
-    </Link>
+      </Link>
+    </section>
   );
 }
 
 DragDetail.propTypes = {
-  queen: PropTypes.object.isRequired
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  quote: PropTypes.string.isRequired,
+  winner: PropTypes.bool.isRequired,
+  season: PropTypes.string.isRequired,
+  MissCongeniality: PropTypes.string.isRequired,
 };
 
 export default DragDetail;

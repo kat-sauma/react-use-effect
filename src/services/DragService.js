@@ -15,13 +15,12 @@ export const fetchQueenById = async (id) => {
   const queen = await res.json();
 
   return {
+    id: queen.id,
     name: queen.name,
     winner: queen.winner,
     MissCongeniality: queen.missCongeniality,
     image: queen.image_url,
     quote: queen.quote,
-    season: queen.episodes.seasonId,
-    lipsyncSong: queen.lipsyncs.name,
-    lipsyncArtist: queen.lipsyncs.artist
+    season: queen.episodes.seasonId
   };
 };

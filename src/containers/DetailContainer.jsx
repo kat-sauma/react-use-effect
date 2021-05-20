@@ -4,7 +4,8 @@ import { fetchQueenById } from '../services/DragService';
 
 export default class DetailContainer extends Component {
     state = {
-      queen: { }
+      loading: true,
+      queen: {}
     }
 
     async componentDidMount() {
@@ -13,12 +14,21 @@ export default class DetailContainer extends Component {
       const queen = await fetchQueenById(id);
 
       this.setState({
-        queen
+        queen,
+        loading: false
       });
     }
     render() {
-      console.log(this.state.queen, 'hi');
-      const { queen } = this.state;
-      return <DragDetail queen={queen} />;
+      const { loading, queen } = this.state;
+     console.log(queen, 'queeeen');
+      if(loading) return (
+        <section role="img" aria-label="loading">
+          <img role="spinner"
+            aria-label="loading spinner" 
+            src="public/loadingedit3.gif"
+          />
+        </section>
+      );
+      else return <DragDetail { ...queen } />;
     }
 }

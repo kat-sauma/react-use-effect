@@ -11,7 +11,7 @@ function DragList({ queens }) {
             id={queen.id}
             name={queen.name}
             winner={queen.winner}
-            img={queen.img}
+            image={queen.image}
           />
         </li>
       ))}
@@ -24,7 +24,7 @@ DragList.propTypes = {
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
-      winner: PropTypes.string.boolean,
+      winner: PropTypes.bool.isRequired,
       image: PropTypes.string.isRequired,
     })
   ).isRequired,

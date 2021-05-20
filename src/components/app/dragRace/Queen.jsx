@@ -4,21 +4,21 @@ import { Link } from 'react-router-dom';
 
 function Queen({ id, name, winner, image }) {
   return (
-    <main>
-      <Link key={id} to={'/$id'} aria-label="queen">
+    <li>
+      <Link key={id} to={`/${id}`} aria-label="queen">
         <img src={image} alt={name} />
         <p>{name}</p>
         <p>Season Winner: {winner}</p>
             
       </Link>
-    </main>
+    </li>
   );
 }
 
 Queen.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
-  winner: PropTypes.string.boolean,
+  winner: PropTypes.bool.isRequired,
   image: PropTypes.string.isRequired,
 };
 
