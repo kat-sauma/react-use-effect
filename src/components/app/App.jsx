@@ -8,9 +8,7 @@ export default function App() {
     <Router>
       <Switch>
         <Route exact path='/' component = {DragContainer} />
-        <Route exact path='/:id' component = {DetailContainer} />
-
-        <Route />
+        <Route path='/:id' component = {DetailContainer} />
       </Switch>
     </Router>
   );
