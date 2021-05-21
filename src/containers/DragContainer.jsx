@@ -1,34 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import DragList from '../components/app/dragRace/DragList';
-import { fetchQueens } from '../services/DragService';
+import useDragQueenList from '../hooks/useDragQueenList';
 
 
 const DragContainer = () => {
-  const [loading, setLoading] = useState(true);
-  const [queens, setQueens] = useState([]);
-  const [page, setPage] = useState(1);
-  
-  useEffect(() => {
-    fetchQueens(page)
-      .then(setQueens)
-      .finally(() => setLoading(false));
-  }, [page]);
+  const { 
+    loading, queens, page, handleNextClick, handlePreviousClick 
+  } = useDragQueenList();
 
-  if(loading) return (
+  return loading ? (
     <section role="img" aria-label="loading">
       <img role="spinner"
         aria-label="loading spinner" 
         src="loadingedit3.gif"
       />;
     </section>
-  );
-  else return (
+  ) : (
     <main>
-      <button onClick={() => setPage((prevPage) => prevPage - 1)}>
+      <button onClick={handlePreviousClick}>
         last
       </button>
       <p>{page}</p>
-      <button onClick={() => setPage((prevPage) => prevPage + 1)}>
+      <button onClick={handleNextClick}>
         next
       </button>
       <DragList queens = { queens } />
