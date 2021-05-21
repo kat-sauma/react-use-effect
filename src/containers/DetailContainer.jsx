@@ -1,26 +1,21 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams, Route } from 'react-router-dom';
+
 import DragDetail from '../components/app/dragRace/DragDetail';
 import { fetchQueenById } from '../services/DragService';
 
-export default class DetailContainer extends Component {
-    state = {
-      loading: true,
-      queen: {}
-    }
+const DetailContainer = () => {
+    const [loading, setLoading] = useState(true);
+    const [queen, setQueen] = useState({});
+    const { id } = useParams();
 
-    async componentDidMount() {
-      const { id } = this.props.match.params;
+    useEffect(() => {
+      fetchQueenById(id)
 
-      const queen = await fetchQueenById(id);
+      .then(setQueen)
+      .finally(() => setLoading(false));
+    }, [id]);
 
-      this.setState({
-        queen,
-        loading: false
-      });
-    }
-    render() {
-      const { loading, queen } = this.state;
-     console.log(queen, 'queeeen');
       if(loading) return (
         <section role="img" aria-label="loading">
           <img role="spinner"
@@ -29,6 +24,9 @@ export default class DetailContainer extends Component {
           />
         </section>
       );
-      else return <DragDetail { ...queen } />;
-    }
-}
+      else return ( 
+        <DragDetail { ...queen } />
+        );
+    };
+
+export default DetailContainer;
