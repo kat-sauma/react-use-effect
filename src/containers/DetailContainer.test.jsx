@@ -13,6 +13,6 @@ describe('DetailContainer', () => {
 
     const li = await screen.findByRole('listitem', { name: 'queen info' });
 
-    expect(li).toMatchSnapshot();
+    expect(li).not.toBeEmptyDOMElement();
   });
 });
