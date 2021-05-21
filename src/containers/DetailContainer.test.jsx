@@ -11,8 +11,8 @@ describe('DetailContainer', () => {
       }
     }}/></MemoryRouter>);
 
-    const li = await screen.findByRole('listitem', { name: 'queen info' });
+    const spinner = await screen.findByRole('spinner', { name: 'loading spinner' });
 
-    expect(li).not.toBeEmptyDOMElement();
+    expect(spinner).toMatchSnapshot();
   });
 });
