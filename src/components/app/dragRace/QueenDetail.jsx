@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-function DragDetail({
+function QueenDetail({
   image, 
   name, 
   winner, 
@@ -24,7 +24,7 @@ function DragDetail({
   );
 }
 
-DragDetail.propTypes = {
+QueenDetail.propTypes = {
   image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   quote: PropTypes.string.isRequired,
@@ -32,4 +32,4 @@ DragDetail.propTypes = {
   MissCongeniality: PropTypes.string.isRequired,
 };
 
-export default DragDetail;
+export default QueenDetail;

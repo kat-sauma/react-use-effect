@@ -1,12 +1,12 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import DragContainer from './DragContainer';
+import QueenListContainer from './QueenListContainer';
 import { MemoryRouter } from 'react-router-dom';
 
 
-describe('DragContainer', () => {
+describe('QueenListContainer', () => {
   it('renders a list of Drag Queens from Ru Paul to the page', async () => {
-    render(<MemoryRouter><DragContainer/></MemoryRouter>);
+    render(<MemoryRouter><QueenListContainer/></MemoryRouter>);
 
     screen.findByRole('img', { name: 'loading' });
 

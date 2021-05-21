@@ -1,12 +1,12 @@
 import React from 'react';
-import DragList from '../components/app/dragRace/DragList';
-import useDragQueenList from '../hooks/useDragQueenList';
+import DragList from '../components/app/dragRace/QueenList';
+import useQueenList from '../hooks/useQueenList';
 
 
-const DragContainer = () => {
+const QueenListContainer = () => {
   const { 
     loading, queens, page, handleNextClick, handlePreviousClick 
-  } = useDragQueenList();
+  } = useQueenList();
 
   return loading ? (
     <section role="img" aria-label="loading">
@@ -29,4 +29,4 @@ const DragContainer = () => {
   );
 };
 
-export default DragContainer;
+export default QueenListContainer;

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Queen from './Queen';
 
-function DragList({ queens }) {
+function QueenList({ queens }) {
   return (
     <ul aria-label="drag queens">
       { queens.map((queen) => (
@@ -19,7 +19,7 @@ function DragList({ queens }) {
   );
 }
 
-DragList.propTypes = {
+QueenList.propTypes = {
   queens: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -30,4 +30,4 @@ DragList.propTypes = {
   ).isRequired,
 };
 
-export default DragList;
+export default QueenList;

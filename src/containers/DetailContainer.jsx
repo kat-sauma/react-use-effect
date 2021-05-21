@@ -1,20 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React from 'react';
+import QueenDetail from '../components/app/dragRace/QueenDetail';
+import useQueenDetail from '../hooks/useQueenDetail';
 
-import DragDetail from '../components/app/dragRace/DragDetail';
-import { fetchQueenById } from '../services/DragService';
 
 const DetailContainer = () => {
-  const [loading, setLoading] = useState(true);
-  const [queen, setQueen] = useState({});
-  const { id } = useParams();
-
-  useEffect(() => {
-    fetchQueenById(id)
-
-      .then(setQueen)
-      .finally(() => setLoading(false));
-  }, [id]);
+  const { loading, queen } = useQueenDetail();
 
   if(loading) return (
     <section role="img" aria-label="loading">
@@ -25,7 +15,7 @@ const DetailContainer = () => {
     </section>
   );
   else return ( 
-    <DragDetail { ...queen } />
+    <QueenDetail { ...queen } />
   );
 };
 
