@@ -10,8 +10,8 @@ const DragContainer = () => {
   
   useEffect(() => {
     fetchQueens(page)
-    .then(setQueens)
-    .finally(() => setLoading(false));
+      .then(setQueens)
+      .finally(() => setLoading(false));
   }, [page]);
 
   if(loading) return (

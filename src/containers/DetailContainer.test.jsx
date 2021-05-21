@@ -1,4 +1,4 @@
-/* eslint-disable max-len */
+
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import DetailContainer from './DetailContainer';
@@ -12,8 +12,14 @@ describe('DetailContainer', () => {
       }
     }}/></MemoryRouter>);
 
-    const spinner = await screen.findByRole('spinner', { name: 'loading spinner' });
+    const spinner = await screen.findByRole(
+      'spinner', 
+      { name: 'loading spinner' }
+    );
 
     expect(spinner).toMatchSnapshot();
+
+    const queens = await screen.findByRole('listitem', { name: 'queen info' });
+    expect(queens).toMatchSnapshot();
   });
 });

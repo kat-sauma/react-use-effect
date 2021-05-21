@@ -8,8 +8,7 @@ function DragDetail({
   name, 
   winner, 
   MissCongeniality, 
-  quote,
-  season
+  quote
 }) {
   return (
     
@@ -19,7 +18,6 @@ function DragDetail({
         <p>{name}</p>
         <p>{quote}</p>
         <p>{winner}</p>
-        <p>{season}</p>
         <p>{MissCongeniality}</p>
       </Link>
     </section>
@@ -31,7 +29,6 @@ DragDetail.propTypes = {
   name: PropTypes.string.isRequired,
   quote: PropTypes.string.isRequired,
   winner: PropTypes.bool.isRequired,
-  season: PropTypes.string.isRequired,
   MissCongeniality: PropTypes.string.isRequired,
 };
 

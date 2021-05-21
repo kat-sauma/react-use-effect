@@ -20,7 +20,6 @@ export const fetchQueenById = async (id) => {
     winner: queen.winner,
     MissCongeniality: queen.missCongeniality,
     image: queen.image_url,
-    quote: queen.quote,
-    season: queen.episodes.seasonId
+    quote: queen.quote
   };
 };
