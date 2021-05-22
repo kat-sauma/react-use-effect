@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailContainer renders details of queens to the page 1`] = `
+<img
+  aria-label="loading spinner"
+  role="spinner"
+  src="public/loadingedit3.gif"
+/>
+`;
+
+exports[`DetailContainer renders details of queens to the page 2`] = `
+<section
+  aria-label="queen info"
+  class="queen-detail"
+  role="listitem"
+>
+  <a
+    href="/"
+  >
+    <img />
+    <p />
+    <p />
+    <p />
+    <p />
+  </a>
+</section>
+`;
